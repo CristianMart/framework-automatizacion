@@ -1,0 +1,101 @@
+apply plugin: 'java'
+<<<<<<< HEAD
+=======
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+>>>>>>> 8e92b625dd6294f3e101b94e0942d0ae06b8d725
+
+group 'retochoucaireribank'
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+      mavenLocal()
+      jcenter()
+      mavenCentral()
+
+}
+
+buildscript {
+    repositories {
+
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+        
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.9.45")
+    }
+}
+
+ext{
+    serenityVersion = '1.9.45'
+    serenityCucumberVersion = '1.9.4'
+}
+
+dependencies {
+    compile group: 'com.codoid.products', name: 'fillo', version: '1.18'
+    compile group: 'net.sf.jt400', name: 'jt400-full', version: '6.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.1'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.1.0'
+    compile group: 'com.googlecode.log4jdbc', name: 'log4jdbc', version: '1.2'
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    compile 'org.apache.commons:commons-lang3:3.8'
+    compile group: 'p6spy', name: 'p6spy', version: '3.7.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation group: 'io.appium', name: 'java-client', version: '6.1.0'
+    testCompile 'org.assertj:assertj-core:3.11.1'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.7'
+    compile 'com.google.code.gson:gson:2.8.5'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+
+}
+
+
+<<<<<<< HEAD
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.9.45")
+    }
+}
+
+ext{
+    serenityVersion = '1.9.45'
+    serenityCucumberVersion = '1.9.4'
+}
+
+dependencies {
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    compile group: 'com.codoid.products', name: 'fillo', version: '1.18'
+
+    compile 'org.apache.commons:commons-lang3:3.8'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation group: 'io.appium', name: 'java-client', version: '6.1.0'
+    testCompile 'org.assertj:assertj-core:3.11.1'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.7'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+
+}
+
+=======
+>>>>>>> 8e92b625dd6294f3e101b94e0942d0ae06b8d725
+gradle.startParameter.continueOnFailure = true
